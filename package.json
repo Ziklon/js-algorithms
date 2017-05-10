@@ -1,0 +1,38 @@
+{
+  "name": "js-algorithms",
+  "version": "1.0.0",
+  "description": "Data Structures and algorithms in javascript ",
+  "main": "index.js",
+  "scripts": {
+    "docs": "gulp jsdoc",
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ziklon/js-algorithms.git"
+  },
+  "keywords": [
+    "javascript",
+    "algorithms",
+    "data",
+    "structures"
+  ],
+  "author": "Ziklon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ziklon/js-algorithms/issues"
+  },
+  "homepage": "https://github.com/Ziklon/js-algorithms#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jscs": "^4.0.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-mocha": "^4.3.1",
+    "gulp-shell": "^0.6.3",
+    "jsdoc": "^3.4.3",
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1",
+    "mocha": "^3.3.0",
+    "should": "^11.2.1"
+  }
+}
