@@ -1,4 +1,14 @@
+
 /**
+ * @example 
+ * var LinkedList = require('path-to-algorithms/src/data-structures/avl-tree').LinkedList;
+ * var list = new LinkedList();
+ * list.insert(20);
+ * list.insert(18);
+ * list.insert(30);
+ * list.insert(23);
+ * list.insert(19);
+ * 
  * 
  * 
  * @module data-structures/linked-list
@@ -108,7 +118,9 @@
   exports.LinkedList.prototype.contains = function (data) {
     var tmp = this.first;
     while (tmp) {
-      if (tmp.data === data) return true;
+      if (tmp.data === data) {
+        return true;
+      }
       tmp = tmp.next;
     }
     return false;
