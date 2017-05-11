@@ -46,7 +46,7 @@ describe('LinkedList', function () {
       linkedList.push(2);
       linkedList.push(3);
       var seq = linkedList.toArray();
-      assert.equal(JSON.stringify([ 1, 2, 3 ]), JSON.stringify(linkedList.toArray()));
+      assert.equal(JSON.stringify([1, 2, 3]), JSON.stringify(linkedList.toArray()));
 
     });
 
