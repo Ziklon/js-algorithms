@@ -57,7 +57,7 @@
       this.last = node;
     }
     this.length = this.length + 1;
-
+    
   };
 
   /**
