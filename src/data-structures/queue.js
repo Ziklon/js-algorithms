@@ -10,9 +10,6 @@
 
     /**
      * Node of the Queue
-     * @public
-     * @constructor
-     * @param {Object} data Data of the node.
      */
     exports.Node = function (data) {
 
@@ -45,6 +42,7 @@
      * @public
      * @method
      * @param {Object} data Data which should be added.
+     * @return {Void}
      */
     exports.Queue.prototype.push = function (data) {
 
@@ -65,6 +63,7 @@
      * Remove the next element to be attended
      * @public
      * @method
+     * @return {Object} data
      */
     exports.Queue.prototype.pop = function () {
 
@@ -79,6 +78,7 @@
      * Retrieve the next element to be attended
      * @public
      * @method
+     * @returns {Object} data
      */
     exports.Queue.prototype.front = function () {
 
@@ -93,6 +93,7 @@
      * Clear the Linked List 
      * @public
      * @method
+     * @return {Array}
      */
     exports.Queue.prototype.toArray = function () {
 
@@ -110,6 +111,7 @@
      * Check if the Queue is empty or not
      * @public
      * @method
+     * @returns {Boolean}
      */
     exports.Queue.prototype.isEmpty = function () {
         return this.first === null;
