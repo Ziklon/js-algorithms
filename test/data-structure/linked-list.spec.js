@@ -1,10 +1,41 @@
 'use strict';
 var assert = require('assert');
-var sum = require('../../src/data-structure/linked-list').sum;
-describe('Adhoc', function() {
-  describe('sum()', function() {
-    it('should return 12 as sum of 8 and 4', function() {
-      assert.equal(12, sum( 8, 4 ) );
+var LinkedList = require('../../src/data-structures/linked-list').LinkedList;
+
+
+describe('LinkedList', function () {
+  describe('#push()', function () {
+    it('should return 3 as size of List', function () {
+      var linkedList = new LinkedList();
+      linkedList.push(1);
+      linkedList.push(2);
+      linkedList.push(3);
+      assert.equal(3, linkedList.length);
+    });
+
+    it('should return 5 as size of List', function () {
+      var linkedList = new LinkedList();
+      linkedList.push(1);
+      linkedList.push(1);
+      linkedList.push(1);
+      linkedList.push(1);
+      linkedList.push(null);
+      assert.equal(5, linkedList.length);
+    });
+  });
+
+
+  describe("#clear()", function () {
+    it('Shoulbe be empty after clear', function () {
+      var linkedList = new LinkedList();
+      linkedList.push(1);
+      linkedList.push(1);
+      linkedList.push(1);
+      linkedList.push(1);
+      linkedList.push(null);
+      linkedList.clear();
+      assert.equal(true,linkedList.isEmpty());
+
     });
   });
 });

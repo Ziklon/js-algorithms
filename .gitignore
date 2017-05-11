@@ -1,3 +1,5 @@
 
 node_modules/
 js_doc/
+
+npm-debug.log*
