@@ -34,8 +34,33 @@ describe('LinkedList', function () {
       linkedList.push(1);
       linkedList.push(null);
       linkedList.clear();
-      assert.equal(true,linkedList.isEmpty());
+      assert.equal(true, linkedList.isEmpty());
 
     });
+
   });
+  describe("#toArray()", function () {
+    it('Shoulbe be return [ 1 , 2 , 3 ] ', function () {
+      var linkedList = new LinkedList();
+      linkedList.push(1);
+      linkedList.push(2);
+      linkedList.push(3);
+      var seq = linkedList.toArray();
+      assert.equal(JSON.stringify([ 1, 2, 3 ]), JSON.stringify(linkedList.toArray()));
+
+    });
+
+  });
+  describe("#contains()", function () {
+    it('Shoulbe be return true as result of contains ', function () {
+      var linkedList = new LinkedList();
+      linkedList.push(1);
+      linkedList.push(2);
+      linkedList.push(3);
+      assert.equal(true, linkedList.contains(2));
+    });
+
+  });
+
+
 });

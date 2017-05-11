@@ -14,19 +14,19 @@
    * @constructor
    * @param {Object} data Data of the node.
    */
-  exports.Node = function(data){
+  exports.Node = function (data) {
 
-      /**
-       * Data of the Node
-       * @member {Object}
-       */
-      this.data = data;
+    /**
+     * Data of the Node
+     * @member {Object}
+     */
+    this.data = data;
 
-      /**
-       * Next Node
-       * @member {Node}
-       */
-      this.next = null;
+    /**
+     * Next Node
+     * @member {Node}
+     */
+    this.next = null;
   };
 
   /**
@@ -34,10 +34,10 @@
    * @public
    * @constructor
    */
-  exports.LinkedList  = function(){
-      this.first = null;
-      this.last = null;
-      this.length = 0;
+  exports.LinkedList = function () {
+    this.first = null;
+    this.last = null;
+    this.length = 0;
   };
 
   /**
@@ -46,17 +46,17 @@
    * @method
    * @param {Object} data Data which should be added.
    */
-  exports.LinkedList.prototype.push = function(data){
+  exports.LinkedList.prototype.push = function (data) {
 
-      var node = new exports.Node(data);
+    var node = new exports.Node(data);
 
-      if(this.isEmpty()){
-          this.first = this.last = node;
-      }else{
-          this.last.next = node;
-          this.last = node;
-      }
-      this.length = this.length + 1;
+    if (this.isEmpty()) {
+      this.first = this.last = node;
+    } else {
+      this.last.next = node;
+      this.last = node;
+    }
+    this.length = this.length + 1;
 
   };
 
@@ -65,16 +65,15 @@
    * @public
    * @method
    */
-  exports.LinkedList.prototype.print = function(){
-      
-        var tmp = this.first;
-        var seq = [];
-        while(tmp){
-          seq.push(tmp.data);
-          tmp = tmp.next;
-        }
+  exports.LinkedList.prototype.toArray = function () {
 
-        console.log(seq);
+    var tmp = this.first;
+    var seq = [];
+    while (tmp) {
+      seq.push(tmp.data);
+      tmp = tmp.next;
+    }
+    return seq;
   };
 
 
@@ -83,27 +82,35 @@
    * @public
    * @method
    */
-  exports.LinkedList.prototype.clear = function(){
-      this.first = this.last = null;
-      this.length = 0;
+  exports.LinkedList.prototype.clear = function () {
+    this.first = this.last = null;
+    this.length = 0;
   };
 
-   /**
+  /**
    * Check if the list is empty or not
    * @public
    * @method
    */
-  exports.LinkedList.prototype.isEmpty = function(){
-      return this.first ===null;
+  exports.LinkedList.prototype.isEmpty = function () {
+    return this.first === null;
   };
 
 
-
-
-
-
-
-
+  /**
+   * Check if Linked List contains data
+   * @public
+   * @method
+   * @param {Object} data Data which should be searched.
+   */
+  exports.LinkedList.prototype.contains = function (data) {
+    var tmp = this.first;
+    while (tmp) {
+      if (tmp.data === data) return true;
+      tmp = tmp.next;
+    }
+    return false;
+  };
 
 
   /**
@@ -118,8 +125,8 @@
    *
    * console.log(sum(1,2)); // 3
    */
-  exports.sum = function ( a, b ) {
-      return a + b;
+  exports.sum = function (a, b) {
+    return a + b;
   };
 
 }(typeof exports === 'undefined' ? window : exports));
