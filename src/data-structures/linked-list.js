@@ -1,4 +1,13 @@
 /**
+ * @example
+ * var LinkedList = require('path-to-algorithms/src/data-structures/avl-tree').LinkedList;
+ * var list = new LinkedList();
+ * list.insert(20);
+ * list.insert(18);
+ * list.insert(30);
+ * list.insert(23);
+ * list.insert(19);
+ *
  *
  *
  * @module data-structures/linked-list
@@ -10,9 +19,7 @@
 
   /**
    * Node of the Linked List
-   * @public
-   * @constructor
-   * @param {Object} data Data of the node.
+   *
    */
   exports.Node = function (data) {
 
@@ -45,6 +52,7 @@
    * @public
    * @method
    * @param {Object} data Data which should be added.
+   * @return {Void}
    */
   exports.LinkedList.prototype.push = function (data) {
 
@@ -64,6 +72,7 @@
    * Clear the Linked List
    * @public
    * @method
+   * @returns {Array} the elements from the linked list
    */
   exports.LinkedList.prototype.toArray = function () {
 
@@ -91,6 +100,7 @@
    * Check if the list is empty or not
    * @public
    * @method
+   * @return {Boolean}
    */
   exports.LinkedList.prototype.isEmpty = function () {
     return this.first === null;
@@ -102,6 +112,7 @@
    * @public
    * @method
    * @param {Object} data Data which should be searched.
+   * @return {Boolean}
    */
   exports.LinkedList.prototype.contains = function (data) {
     var tmp = this.first;

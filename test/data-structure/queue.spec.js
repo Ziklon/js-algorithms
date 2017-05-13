@@ -15,8 +15,7 @@ describe('Queue', function () {
 
     it('should return 5 as size of List', function () {
       var queue = new Queue();
-
-            [1, 1, 1, 1, null].forEach(function (item) {
+      [1, 1, 1, 1, null].forEach(function (item) {
         queue.push(item);
       });
       assert.equal(5, queue.length);
@@ -44,9 +43,6 @@ describe('Queue', function () {
       queue.push(3);
       assert.equal(1, queue.front());
     });
-
-
-
 
   });
   describe("#pop()", function () {
