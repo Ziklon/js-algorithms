@@ -1,119 +1,123 @@
 /**
- * 
- * 
+ *
+ *
  * @module data-structures/queue
  */
 
 (function (exports) {
-    'use strict';
+  'use strict';
 
 
-    /**
-     * Node of the Queue
-     * @public
-     * @constructor
-     * @param {Object} data Data of the node.
-     */
-    exports.Node = function (data) {
-
-        /**
-         * Data of the Node
-         * @member {Object}
-         */
-        this.data = data;
-
-        /**
-         * Next Node
-         * @member {Node}
-         */
-        this.next = null;
-    };
+  /**
+   * Node of the Queue
+   * @public
+   * @constructor
+   * @param {Object} data Data of the node.
+   */
+  exports.Node = function (data) {
 
     /**
-     * Linked List
-     * @public
-     * @constructor
+     * Data of the Node
+     * @member {Object}
      */
-    exports.Queue = function () {
-        this.first = null;
-        this.last = null;
-        this.length = 0;
-    };
+    this.data = data;
 
     /**
-     * Add data to the end of linked list
-     * @public
-     * @method
-     * @param {Object} data Data which should be added.
+     * Next Node
+     * @member {Node}
      */
-    exports.Queue.prototype.push = function (data) {
+    this.next = null;
+  };
 
-        var node = new exports.Node(data);
+  /**
+   * Linked List
+   * @public
+   * @constructor
+   */
+  exports.Queue = function () {
+    this.first = null;
+    this.last = null;
+    this.length = 0;
+  };
 
-        if (this.isEmpty()) {
-            this.first = this.last = node;
-        } else {
-            this.last.next = node;
-            this.last = node;
-        }
-        this.length = this.length + 1;
+  /**
+   * Add data to the end of linked list
+   * @public
+   * @method
+   * @param {Object} data Data which should be added.
+   */
+  exports.Queue.prototype.push = function (data) {
 
-    };
+    var node = new exports.Node(data);
 
+    if (this.isEmpty()) {
+      this.first = this.last = node;
+    } else {
+      this.last.next = node;
+      this.last = node;
+    }
+    this.length = this.length + 1;
 
-    /**
-     * Remove the next element to be attended
-     * @public
-     * @method
-     */
-    exports.Queue.prototype.pop = function () {
-
-        if (this.isEmpty()) throw "Queue is empty";
-        var node = this.first;
-        var data = node.data;
-        this.first = node.next;
-        return data;
-    };
-
-    /**
-     * Retrieve the next element to be attended
-     * @public
-     * @method
-     */
-    exports.Queue.prototype.front = function () {
-
-        if (this.isEmpty()) throw "Queue is empty";
-        var node = this.first;
-        return node.data;
-    };
+  };
 
 
+  /**
+   * Remove the next element to be attended
+   * @public
+   * @method
+   */
+  exports.Queue.prototype.pop = function () {
 
-    /**
-     * Clear the Linked List 
-     * @public
-     * @method
-     */
-    exports.Queue.prototype.toArray = function () {
+    if (this.isEmpty()) {
+      throw "Queue is empty";
+    }
+    var node = this.first,
+      data = node.data;
+    this.first = node.next;
+    return data;
+  };
 
-        var tmp = this.first;
-        var seq = [];
-        while (tmp) {
-            seq.push(tmp.data);
-            tmp = tmp.next;
-        }
-        return seq;
-    };
+  /**
+   * Retrieve the next element to be attended
+   * @public
+   * @method
+   */
+  exports.Queue.prototype.front = function () {
+
+    if (this.isEmpty()) {
+      throw "Queue is empty";
+    }
+    var node = this.first;
+    return node.data;
+  };
 
 
-    /**
-     * Check if the Queue is empty or not
-     * @public
-     * @method
-     */
-    exports.Queue.prototype.isEmpty = function () {
-        return this.first === null;
-    };
+
+  /**
+   * Clear the Linked List
+   * @public
+   * @method
+   */
+  exports.Queue.prototype.toArray = function () {
+
+    var tmp = this.first,
+      seq = [];
+    while (tmp) {
+      seq.push(tmp.data);
+      tmp = tmp.next;
+    }
+    return seq;
+  };
+
+
+  /**
+   * Check if the Queue is empty or not
+   * @public
+   * @method
+   */
+  exports.Queue.prototype.isEmpty = function () {
+    return this.first === null;
+  };
 
 
 

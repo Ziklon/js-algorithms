@@ -16,8 +16,8 @@ describe('LinkedList', function () {
     it('should return 5 as size of List', function () {
       var linkedList = new LinkedList();
 
-      [1,1,1,1,null].forEach(function(item){
-          linkedList.push(item);
+      [1, 1, 1, 1, null].forEach(function (item) {
+        linkedList.push(item);
       });
       assert.equal(5, linkedList.length);
     });
@@ -28,8 +28,8 @@ describe('LinkedList', function () {
     it('Shoulbe be empty after clear', function () {
       var linkedList = new LinkedList();
 
-      [1,1,1,1,null].forEach(function(item){
-          linkedList.push(item);
+      [1, 1, 1, 1, null].forEach(function (item) {
+        linkedList.push(item);
       });
       linkedList.clear();
       assert.equal(true, linkedList.isEmpty());

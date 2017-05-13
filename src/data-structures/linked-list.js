@@ -1,6 +1,6 @@
 /**
- * 
- * 
+ *
+ *
  * @module data-structures/linked-list
  */
 
@@ -57,18 +57,18 @@
       this.last = node;
     }
     this.length = this.length + 1;
-    
+
   };
 
   /**
-   * Clear the Linked List 
+   * Clear the Linked List
    * @public
    * @method
    */
   exports.LinkedList.prototype.toArray = function () {
 
-    var tmp = this.first;
-    var seq = [];
+    var tmp = this.first,
+      seq = [];
     while (tmp) {
       seq.push(tmp.data);
       tmp = tmp.next;
@@ -78,7 +78,7 @@
 
 
   /**
-   * Clear the Linked List 
+   * Clear the Linked List
    * @public
    * @method
    */
@@ -106,7 +106,9 @@
   exports.LinkedList.prototype.contains = function (data) {
     var tmp = this.first;
     while (tmp) {
-      if (tmp.data === data) return true;
+      if (tmp.data === data) {
+        return true;
+      }
       tmp = tmp.next;
     }
     return false;
